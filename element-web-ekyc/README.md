@@ -36,11 +36,11 @@ Once the above CLIENTID and APIKey strings are retrieved, you can get the TIMEST
 1. The HASHTOKEN string will appear in the token field.
 
 # Link Address
-The URL link consists of multiple fields, including the transaction Id, user Id, CLIENTID, TIMESTAMP and HASHTOKEN, e.g., https://web_ekyc_server/package/page/liveness_check.html?txnId=txn001&userId=user001&CLIENTID=100&TIMESTAMP=1610981479694&HASHTOKEN=MaKF6qwYwRc3qRPIBvHQx5zRLfl5IQ8J74SoYWwF4MQ=&apiKey=dkhqOVlvWGt1T1YxV1p3R2pxeVhReVJUUElvaThpbHVpdmZvRnBVUDhkaERtUEZx&action=[enroll/auth]&apiURL=[fm server], where web_ekyc_server is the host server address, package is the application name, and fm_server is the application-specific backend server provisioned by Element respectively.
+The URL link consists of multiple fields, including the transaction Id, user Id, CLIENTID, TIMESTAMP and HASHTOKEN, e.g., [https://web_ekyc_server/package/page/liveness_check.html?txnId=txn001&userId=user001&CLIENTID=100&TIMESTAMP=1610981479694&HASHTOKEN=MaKF6qwYwRc3qRPIBvHQx5zRLfl5IQ8J74SoYWwF4MQ=&apiKey=dkhqOVlvWGt1T1YxV1p3R2pxeVhReVJUUElvaThpbHVpdmZvRnBVUDhkaERtUEZx&action=(enroll/auth)&apiURL=fm server](https://web_ekyc_server/package/page/liveness_check.html), where web_ekyc_server is the host server address, package is the application name, and fm_server is the application-specific backend server provisioned by Element respectively.
 
-In the above URL, both txnId and userId parameters are required to index each transaction. These Id parameters will be used for troubleshooting and support purposes.
+In the above URL, both txnId and userId parameters are required to index each transaction. These Id parameters will be needed for troubleshooting and support purposes.
 
-The CLIENTID, TIMESTAMP and HASHTOKEN are all mandatory to ensure security.
+The CLIENTID, TIMESTAMP and HASHTOKEN parameters are all mandatory to ensure security.
 
 If the above parameter strings contain any special characters please make sure they are URL-encoded.
 
@@ -64,24 +64,24 @@ If there is any issue experienced, note down the txnId and userId and send them 
 
 2. A verification page will appear to show a live camera view along with a face stencil for the user to take selfies.
 
-3. After the selfie images are taken, a message dialog will pop up to show the verification result.
+3. After the selfie images are processed, a message dialog will pop up to show the verification result.
 
 If there is any issue experienced, note down the userId and txnId and send them to the Element team for troubleshooting.
 
 # Steps to Set Up Webhook
 To return the user enrollment and verification results back to the integration system, a webhook approach is used on the server side for security purposes.
 
-1. Login the Dashboard https://server_address/login.
+1. Log into the Element Dashboard with your registered account.
 
 2. Select `SETTING` and `Config`.
 
 3. Add the following three keys:
 
-  - SPOOF_WEB_HOOK
+   * SPOOF_WEB_HOOK
 
-  - SPOOF_WEB_HOOK_CLIENT_ID
+   * SPOOF_WEB_HOOK_CLIENT_ID
 
-  - SPOOF_WEB_HOOK_SECURITY_KEY
+   * SPOOF_WEB_HOOK_SECURITY_KEY
 
 ![webhook-config](images/webhook.png "webhook-config")
 
