@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "start": "webpack --config ./webpack.config.js && webpack serve --open --host 0.0.0.0 --https"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^9.0.1",
+    "html-webpack-plugin": "^5.3.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "dependencies": {
+    "web-ekyc": "file:sdk"
+  }
+}
